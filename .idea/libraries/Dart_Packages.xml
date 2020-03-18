@@ -240,6 +240,13 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_web_plugins">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutterEnvironment/flutter/packages/flutter_web_plugins/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="glob">
           <value>
             <list>
@@ -454,6 +461,34 @@
           <value>
             <list>
               <option value="$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/reflectable-2.2.1+2/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="shared_preferences">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-0.5.6+3/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="shared_preferences_macos">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_macos-0.0.1+6/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="shared_preferences_platform_interface">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_platform_interface-1.0.3/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="shared_preferences_web">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_web-0.1.2+4/lib" />
             </list>
           </value>
         </entry>
@@ -677,6 +712,10 @@
       <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/pubspec_parse-0.1.5/lib" />
       <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/quiver-2.0.5/lib" />
       <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/reflectable-2.2.1+2/lib" />
+      <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-0.5.6+3/lib" />
+      <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_macos-0.0.1+6/lib" />
+      <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_platform_interface-1.0.3/lib" />
+      <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_web-0.1.2+4/lib" />
       <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/shelf-0.7.5/lib" />
       <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/shelf_web_socket-0.2.3/lib" />
       <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/shimmer-1.0.1/lib" />
@@ -701,6 +740,7 @@
       <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/bin/cache/pkg/sky_engine/lib" />
       <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/packages/flutter/lib" />
       <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/packages/flutter_test/lib" />
+      <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/packages/flutter_web_plugins/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

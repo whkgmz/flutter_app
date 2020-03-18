@@ -1,4 +1,7 @@
 # This is a generated file; do not edit or check into version control.
 flutter_plugin_android_lifecycle=/Users/whk/Desktop/flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_plugin_android_lifecycle-1.0.5/
 image_picker=/Users/whk/Desktop/flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/image_picker-0.6.3+1/
+shared_preferences=/Users/whk/Desktop/flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-0.5.6+3/
+shared_preferences_macos=/Users/whk/Desktop/flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_macos-0.0.1+6/
+shared_preferences_web=/Users/whk/Desktop/flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_web-0.1.2+4/
 webview_flutter=/Users/whk/Desktop/flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter-0.3.19+7/

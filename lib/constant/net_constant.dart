@@ -1,5 +1,8 @@
+// 请求地址的管理
 class NetConstant {
   static const String DOMAINS = "https://www.wanandroid.com";
+
+  static const String BASE_URL = "http://localhost:3000";
 
   static const String BANNER_JSON = "/banner/json";
 

@@ -17,7 +17,9 @@ class HttpUtils {
   }
 
   BuildContext context;
+
   Options _options;
+
   static Dio dio = Dio(BaseOptions(baseUrl: NetConstant.DOMAINS));
 
   static void init() {

@@ -12,6 +12,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart'; // 布局包
 import 'package:fluro/fluro.dart';
 import 'package:flutter_rush/routers/application.dart';
 import 'package:flutter_rush/routers/routers.dart';
+import 'package:flutter_rush/routers/observer.dart';
+import 'package:flutter_rush/constant/globalkey.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -63,6 +65,9 @@ void main() async {
 //  });
 //}
 
+// 获取全局对象
+//final GlobalKey<NavigatorState> navigatorKey = new GlobalKey<NavigatorState>();
+
 class MyApp extends StatelessWidget {
   MaterialColor _white = const MaterialColor(
     0xFFFFFFFF,
@@ -84,7 +89,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'RushB',
+      //navigatorKey: navigatorKey, // 配置全局对象
+      navigatorKey: NavigatorKey.navigatorKey, // 配置全局对象
       onGenerateRoute: Application.router.generator, //路由静态化
+      //导航的观察者
+      navigatorObservers: <NavigatorObserver>[NewObserver()],
       home: BottomNavigationWidget(),
       theme: ThemeData(
         primarySwatch: _white,

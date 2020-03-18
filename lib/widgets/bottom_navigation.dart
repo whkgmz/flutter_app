@@ -5,7 +5,6 @@ import 'package:flutter_rush/page/type_page.dart';
 import 'package:flutter_rush/provide/tree_model_provider.dart';
 import 'package:flutter_rush/page/mine.dart';
 import 'package:flutter_rush/page/save.dart';
-import 'package:flutter_rush/page/login.dart';
 import 'package:flutter_rush/utils/global_utils.dart';
 import 'package:provider/provider.dart';
 
@@ -22,9 +21,7 @@ class BottomNavigationState extends State<BottomNavigationWidget> {
       create: (BuildContext context) => TreeModelProvider(),
       child: TypePage(),
     ),
-
-    Login(),
-    //SaveWidget(),
+    SaveWidget(),
     MinePage()
   ];
 

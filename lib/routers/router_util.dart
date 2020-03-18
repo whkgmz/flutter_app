@@ -3,7 +3,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 
 import 'application.dart';
-import 'routers.dart';
+// import 'routers.dart';
 
 /// fluro的路由跳转工具类
 class NavigatorUtils {
@@ -36,16 +36,32 @@ class NavigatorUtils {
     });
   }
 
-  /// 返回
+  // /// 返回
+  // static void goBack(BuildContext context) {
+  //   FocusScope.of(context).unfocus();
+  //   Navigator.pop(context);
+  // }
+
+  // /// 带参数返回
+  // static void goBackWithParams(BuildContext context, result) {
+  //   FocusScope.of(context).unfocus();
+  //   Navigator.pop(context, result);
+  // }
+  // 返回
   static void goBack(BuildContext context) {
-    FocusScope.of(context).unfocus();
+    /// 其实这边调用的是
     Navigator.pop(context);
+    Application.router.pop(context);
   }
 
-  /// 带参数返回
+  // 带参数的返回
   static void goBackWithParams(BuildContext context, result) {
-    FocusScope.of(context).unfocus();
     Navigator.pop(context, result);
+  }
+
+  // 路由返回指定页面
+  static void goBackUrl(BuildContext context, String title) {
+    Navigator.popAndPushNamed(context, title);
   }
 
   /// 跳到WebView页

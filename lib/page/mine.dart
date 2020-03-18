@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // 布局包
 import 'package:flutter_rush/utils/global_utils.dart';
 import 'package:image_picker/image_picker.dart'; // 选择图片
+import 'package:flutter_rush/widgets/mine/drawer.dart';
 
 class MinePage extends StatefulWidget {
   @override
@@ -17,6 +18,7 @@ class _MineState extends State<MinePage> {
           ..init(context);
     // TODO: implement build
     return Scaffold(
+      drawer: MyDrawer(), //抽屉
       appBar: AppBar(title: Text("纹身店铺"), backgroundColor: Colors.white),
       body: ListView(
         children: <Widget>[

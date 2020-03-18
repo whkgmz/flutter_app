@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart'; // 布局包
-import 'package:flutter_rush/network/http_utils.dart';
-import 'package:dio/dio.dart'; // 请求包
-import 'dart:convert';
-import 'package:flutter_rush/model/login_model.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart'; // 布局包\
 import 'package:flutter_rush/routers/router_util.dart';
-// import 'package:annotation_route/route.dart';
-//import 'package:flutter_rush/routers/index.dart';
+import 'package:shared_preferences/shared_preferences.dart'; // 负责本地存储
+import 'package:flutter_rush/network/apis.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -19,21 +15,29 @@ class _LoginState extends State<Login> {
   GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   String _name, _password;
 
+  final String token = "token";
+
   // 登录
+  // Options options = Options(contentType: Headers.jsonContentType); // 设置options
   void submitLoginData(username, password) async {
-    Response response;
-    Dio dio = new Dio();
-    response = await dio.post("http://localhost:3000/api/login",
-        data: {"username": username, "password": password});
-    print(response);
-    Map<String, dynamic> json = jsonDecode(response.toString());
-    // /*将Json转成实体类*/
-    LoginModel newsBean = LoginModel.fromJson(json);
-    print(newsBean.code);
-    if (newsBean.code == 0) {
-      // 登录成功后跳转页面
-      NavigatorUtils.push(context, '/mine');
-    }
+    ApiUtil().requestLogin({"username": username, "password": password}).then(
+        (onValue) {
+      print(onValue.data.token);
+      if (onValue.code == 0) {
+        saveToken(onValue.data.token);
+        Navigator.of(context).pushNamed('/save');
+        // Navigator.of(context).pushNamedAndRemoveUntil(
+        //   '/',
+        //   (route) => route == null,
+        // ); // 登录成功后跳转到首页
+      }
+    });
+  }
+
+  // 保存token
+  void saveToken(value) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString(token, value);
   }
 
   Widget build(BuildContext context) {
