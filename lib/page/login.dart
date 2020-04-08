@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // 布局包\
 import 'package:flutter_rush/routers/router_util.dart';
-import 'package:shared_preferences/shared_preferences.dart'; // 负责本地存储
 import 'package:flutter_rush/network/apis.dart';
+import 'package:flutter_rush/utils/shared_preferences.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -22,22 +22,25 @@ class _LoginState extends State<Login> {
   void submitLoginData(username, password) async {
     ApiUtil().requestLogin({"username": username, "password": password}).then(
         (onValue) {
-      print(onValue.data.token);
+      print('login' + onValue.data.token);
       if (onValue.code == 0) {
-        saveToken(onValue.data.token);
-        Navigator.of(context).pushNamed('/save');
-        // Navigator.of(context).pushNamedAndRemoveUntil(
-        //   '/',
-        //   (route) => route == null,
-        // ); // 登录成功后跳转到首页
+        //saveToken(onValue.data.token);
+        setToken(onValue.data.token).then((res) {
+          Navigator.of(context).pushNamedAndRemoveUntil(
+            '/',
+            (route) => route == null,
+          ); // 登录成功后跳转到首页
+        });
       }
     });
   }
 
-  // 保存token
-  void saveToken(value) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString(token, value);
+  void goRegister() {
+    NavigatorUtils.push(context, '/register', replace: true);
+  }
+
+  Future setToken(value) async {
+    SpUtils.set(SpUtils.USERTOKEN, value);
   }
 
   Widget build(BuildContext context) {
@@ -169,15 +172,17 @@ class _LoginState extends State<Login> {
                     )),
               ),
               Container(
-                margin: EdgeInsets.only(
-                    top: ScreenUtil.getInstance().setHeight(30)),
-                child: Text(
-                  '验证码登录',
-                  style: TextStyle(
-                      fontSize: ScreenUtil.getInstance().setSp(24),
-                      color: Color.fromRGBO(51, 51, 51, 1)),
-                ),
-              ),
+                  margin: EdgeInsets.only(
+                      top: ScreenUtil.getInstance().setHeight(30)),
+                  child: GestureDetector(
+                    child: Text(
+                      '还没有账号？去注册',
+                      style: TextStyle(
+                          fontSize: ScreenUtil.getInstance().setSp(24),
+                          color: Color.fromRGBO(51, 51, 51, 1)),
+                    ),
+                    onTap: goRegister,
+                  )),
               Container(
                 margin: EdgeInsets.only(
                     top: ScreenUtil.getInstance().setHeight(200)),

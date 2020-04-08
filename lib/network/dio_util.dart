@@ -1,7 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_rush/constant/net_constant.dart';
-import 'package:shared_preferences/shared_preferences.dart'; // 负责本地存储
+import 'package:flutter_rush/utils/shared_preferences.dart';
+import 'package:flutter_rush/constant/globalkey.dart';
 import 'dart:convert';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class DioUtils {
 // 设置统一请求连接时间和超时时间
@@ -45,18 +47,22 @@ class DioUtils {
     //添加拦截器
     dio.interceptors
         .add(InterceptorsWrapper(onRequest: (RequestOptions options) async {
-      // //我这边是在发送前到SharedPreferences（本地存储）中取出token的值，然后添加到请求头中
+      // //发送前取出token的值，然后添加到请求头中
       //dio.lock()是先锁定请求不发送出去，当整个取值添加到请求头后再dio.unlock()解锁发送出去
-      // SharedPreferences prefs = await SharedPreferences.getInstance();
-      // var token = prefs.getString("token");
-      // print(token == null);
-      // dio.lock();
-      // return future.then((value) {
-      //   print(value);
-      //   options.headers["Authorization"] = 'Bearer ' + value;
-      //   return options;
-      // }).whenComplete(() => dio.unlock()); // unlock the dio
-      return options; //continue
+      RegExp reg = new RegExp(r"login|register");
+      dio.lock();
+      return SpUtils.get(SpUtils.USERTOKEN, 'defaultObject').then((value) {
+        if (reg.hasMatch(options.path)) {
+          return options;
+        }
+        if (value == null) {
+          NavigatorKey.navigatorKey.currentState.pushNamed('/login');
+        } else {
+          options.headers["Authorization"] = 'Bearer ' + value;
+          return options;
+        }
+      }).whenComplete(() => dio.unlock()); // unlock the dio
+      //return options; //continue
     }, onResponse: (Response response) {
       // 在返回响应数据之前做一些预处理 此处拦截工作在数据返回之后，可在此对dio请求的数据做二次封装或者转实体类等相关操作
       print(response);
@@ -120,6 +126,17 @@ class DioUtils {
       //It occurs when receiving timeout
       print("响应超时");
     } else if (e.type == DioErrorType.RESPONSE) {
+      print(e.response.statusCode);
+      // 统一处理 http status
+      if (e.response.statusCode == 401) {
+        NavigatorKey.navigatorKey.currentState.pushNamed('/login');
+      } else if (e.response.statusCode != 200) {
+        Fluttertoast.showToast(
+            msg: "${e.response.statusMessage}",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIos: 1);
+      }
       // When the server response, but with a incorrect status, such as 404, 503...
       print("出现异常");
     } else if (e.type == DioErrorType.CANCEL) {

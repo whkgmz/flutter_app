@@ -7,6 +7,7 @@ import 'package:flutter_rush/page/mine.dart';
 import 'package:flutter_rush/page/save.dart';
 import 'package:flutter_rush/utils/global_utils.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_rush/utils/shared_preferences.dart';
 
 class BottomNavigationWidget extends StatefulWidget {
   @override
@@ -77,9 +78,19 @@ class BottomNavigationState extends State<BottomNavigationWidget> {
               )),
         ],
         currentIndex: _currentIndex,
-        onTap: (int index) {
-          setState(() {
-            _currentIndex = index;
+        onTap: (int index) async {
+          // 获取token
+          SpUtils.get(SpUtils.USERTOKEN, 'defaultObject').then((onValue) {
+            if (onValue == null) {
+              Navigator.of(context).pushNamedAndRemoveUntil(
+                '/login',
+                (route) => route == null,
+              ); // 登录成功后跳转到首页
+            } else {
+              setState(() {
+                _currentIndex = index;
+              });
+            }
           });
         },
         type: BottomNavigationBarType.fixed,

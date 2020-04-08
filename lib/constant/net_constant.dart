@@ -19,4 +19,5 @@ class NetConstant {
   static const String TYPE_ARTICLE = "/project/list/%s/json?cid=%s";
 
   static const String LOGIN = "/api/login";
+  static const String REGISTER_PATH = "/api/register";
 }

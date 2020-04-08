@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rush/utils/log_utils.dart';
-import 'package:flutter_rush/widgets/bottom_navigation.dart';
+// import 'package:flutter_rush/widgets/bottom_navigation.dart';
 
 import 'network/http_utils.dart';
 
@@ -14,6 +14,7 @@ import 'package:flutter_rush/routers/application.dart';
 import 'package:flutter_rush/routers/routers.dart';
 import 'package:flutter_rush/routers/observer.dart';
 import 'package:flutter_rush/constant/globalkey.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -91,10 +92,11 @@ class MyApp extends StatelessWidget {
       title: 'RushB',
       //navigatorKey: navigatorKey, // 配置全局对象
       navigatorKey: NavigatorKey.navigatorKey, // 配置全局对象
+      //initialRoute: '/',
       onGenerateRoute: Application.router.generator, //路由静态化
       //导航的观察者
       navigatorObservers: <NavigatorObserver>[NewObserver()],
-      home: BottomNavigationWidget(),
+      //home: BottomNavigationWidget(),
       theme: ThemeData(
         primarySwatch: _white,
       ),

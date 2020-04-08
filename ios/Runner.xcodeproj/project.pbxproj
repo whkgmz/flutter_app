@@ -135,6 +135,7 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		D2D2382DEF8D8DE84481F053 /* Frameworks */ = {
 			isa = PBXGroup;

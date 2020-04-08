@@ -42,12 +42,16 @@ android {
     }
     signingConfigs{
         release {
-            storeFile file('keystore')
-            storePassword 'fittime1991'
-            keyAlias = 'key0'
-            keyPassword 'fittime'
-            v1SigningEnabled true
-            v2SigningEnabled true
+            // storeFile file('keystore')
+            // storePassword 'whk123'
+            // keyAlias = 'key'
+            // keyPassword 'whk123'
+            // v1SigningEnabled true
+            // v2SigningEnabled true
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
         }
         
     }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rush/utils/shared_preferences.dart';
+import 'package:flutter_rush/routers/router_util.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({
@@ -6,6 +8,10 @@ class MyDrawer extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  static Future outLogin() async {
+    SpUtils.clear();
+  }
+
   Widget build(BuildContext context) {
     return Drawer(
       child: MediaQuery.removePadding(
@@ -18,18 +24,10 @@ class MyDrawer extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 38.0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: ClipOval(
-                      child: Image.asset(
-                        "imgs/avatar.png",
-                        width: 80,
-                      ),
-                    ),
-                  ),
                   Text(
-                    "Wendux",
+                    "更多设置",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   )
                 ],
@@ -38,13 +36,30 @@ class MyDrawer extends StatelessWidget {
             Expanded(
               child: ListView(
                 children: <Widget>[
-                  ListTile(
-                    leading: const Icon(Icons.add),
-                    title: const Text('Add account'),
+                  GestureDetector(
+                    child: ListTile(
+                      leading: const Icon(Icons.add),
+                      title: const Text('退出登录'),
+                    ),
+                    onTap: () => {
+                      outLogin().then((onValue) {
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                          '/',
+                          (route) => route == null,
+                        );
+                      })
+                    },
+                  ),
+                  GestureDetector(
+                    child: ListTile(
+                      leading: const Icon(Icons.add),
+                      title: const Text('运动视频'),
+                    ),
+                    onTap: () => {NavigatorUtils.push(context, 'videoList')},
                   ),
                   ListTile(
                     leading: const Icon(Icons.settings),
-                    title: const Text('Manage accounts'),
+                    title: const Text('功能后续追加...'),
                   ),
                 ],
               ),
