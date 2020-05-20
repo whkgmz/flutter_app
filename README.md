@@ -22,14 +22,14 @@ samples, guidance on mobile development, and a full API reference.
 dio | 网络库 |
 provider | 状态管理 |
 cached_network_image | 图片加载 |
-fluro | 路由管理
-flutter_oktoast | Toast
-common_utils | 常用工具类库
-flutter_slidable | 侧滑删除
-flustars | Flutter 常用工具类库
-flutter_swiper | 轮播组件
-image_picker | 图片选择插件
-webview_flutter | WebView插件
-sticky_headers | 列表悬浮头
+fluro | 路由管理 |
+flutter_oktoast | Toast |
+common_utils | 常用工具类库 |
+flutter_slidable | 侧滑删除 |
+flustars | Flutter 常用工具类库 |
+flutter_swiper | 轮播组件 |
+image_picker | 图片选择插件 |
+webview_flutter | WebView插件 |
+sticky_headers | 列表悬浮头 |
 
 详细内容可以参看pubspec.yaml文件
