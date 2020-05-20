@@ -17,17 +17,8 @@ samples, guidance on mobile development, and a full API reference.
 
 ## 使用到的三方库
 
-详细内容可以参看pubspec.yaml文件
-库 | 功能
-:-: | :-: | :-: | :-: | :-:
-dio | 网络库 |
-fff | ggg| hhh | iii | 000|
-
-name | 111 |
+库 | 功能 |
 :-: | :-: |
+dio | 网络库 |
 
-|   |   |   |   |   |
-|---|---|---|---|---|
-|   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
+详细内容可以参看pubspec.yaml文件
