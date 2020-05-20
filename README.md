@@ -16,7 +16,7 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 ## 实现内容
-使用provider (4.x 版本)做状态管理
++ 使用provider (4.x 版本)做状态管理
 基于dio （3.x 版本）的网络请求封装
 完整的集成测试、可访问性测试。
 支持深色模式
