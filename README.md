@@ -17,12 +17,12 @@ samples, guidance on mobile development, and a full API reference.
 
 ## 使用到的三方库
 
-库 | 功能  
+ |   
 -|-|-
-dio | 网络库 |
+ |  |
 
 详细内容可以参看pubspec.yaml文件
-name | 111 | 222 | 333 | 444
+库 | 功能
 :-: | :-: | :-: | :-: | :-:
-aaa | bbb | ccc | ddd | eee| 
+dio | 网络库 
 fff | ggg| hhh | iii | 000|
