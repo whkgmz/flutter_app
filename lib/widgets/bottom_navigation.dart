@@ -80,18 +80,21 @@ class BottomNavigationState extends State<BottomNavigationWidget> {
         currentIndex: _currentIndex,
         onTap: (int index) async {
           // 获取token
-          SpUtils.get(SpUtils.USERTOKEN, 'defaultObject').then((onValue) {
-            if (onValue == null) {
-              Navigator.of(context).pushNamedAndRemoveUntil(
-                '/login',
-                (route) => route == null,
-              ); // 登录成功后跳转到首页
-            } else {
-              setState(() {
-                _currentIndex = index;
-              });
-            }
+          setState(() {
+            _currentIndex = index;
           });
+          // SpUtils.get(SpUtils.USERTOKEN, 'defaultObject').then((onValue) {
+          //   if (onValue == null) {
+          //     Navigator.of(context).pushNamedAndRemoveUntil(
+          //       '/login',
+          //       (route) => route == null,
+          //     ); // 登录成功后跳转到首页
+          //   } else {
+          //     setState(() {
+          //       _currentIndex = index;
+          //     });
+          //   }
+          // });
         },
         type: BottomNavigationBarType.fixed,
       ),

@@ -25,15 +25,15 @@ class NewObserver extends NavigatorObserver {
     //可通过route.settings获取路由相关内容
     /// route.settings.name 获取到路由命名
     print(route.settings.name);
-    SpUtils.get(SpUtils.USERTOKEN, 'defaultObject').then((onValue) {
-      // token不为空且不是登录页或者注册页
-      if (onValue == null && !reg.hasMatch(route.settings.name)) {
-        NavigatorKey.navigatorKey.currentState.pushNamed('/login');
-      }
-      // if (onValue == null &&
-      //     route.settings.name != 'login' &&
-      //     route.settings.name != 'register') {}
-    });
+    // SpUtils.get(SpUtils.USERTOKEN, 'defaultObject').then((onValue) {
+    //   // token不为空且不是登录页或者注册页
+    //   if (onValue == null && !reg.hasMatch(route.settings.name)) {
+    //     NavigatorKey.navigatorKey.currentState.pushNamed('/login');
+    //   }
+    //   // if (onValue == null &&
+    //   //     route.settings.name != 'login' &&
+    //   //     route.settings.name != 'register') {}
+    // });
     print('跳转到下一个页面 ${route.settings.name}');
   }
 

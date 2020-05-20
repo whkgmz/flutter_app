@@ -7,7 +7,7 @@ import 'package:flutter_rush/utils/log_utils.dart';
 
 import 'network/http_utils.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart'; // 布局包
+// import 'package:flutter_screenutil/flutter_screenutil.dart'; // 布局包
 
 import 'package:fluro/fluro.dart';
 import 'package:flutter_rush/routers/application.dart';
@@ -15,6 +15,7 @@ import 'package:flutter_rush/routers/routers.dart';
 import 'package:flutter_rush/routers/observer.dart';
 import 'package:flutter_rush/constant/globalkey.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_rush/provide/provider_manager.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -87,19 +88,36 @@ class MyApp extends StatelessWidget {
   );
 
   @override
+  // Widget build(BuildContext context) {
+  //   return MaterialApp(
+  //     title: 'RushB',
+  //     //navigatorKey: navigatorKey, // 配置全局对象
+  //     navigatorKey: NavigatorKey.navigatorKey, // 配置全局对象
+  //     //initialRoute: '/',
+  //     onGenerateRoute: Application.router.generator, //路由静态化
+  //     //导航的观察者
+  //     navigatorObservers: <NavigatorObserver>[NewObserver()],
+  //     //home: BottomNavigationWidget(),
+  //     theme: ThemeData(
+  //       primarySwatch: _white,
+  //     ),
+  //   );
+  // }
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'RushB',
-      //navigatorKey: navigatorKey, // 配置全局对象
-      navigatorKey: NavigatorKey.navigatorKey, // 配置全局对象
-      //initialRoute: '/',
-      onGenerateRoute: Application.router.generator, //路由静态化
-      //导航的观察者
-      navigatorObservers: <NavigatorObserver>[NewObserver()],
-      //home: BottomNavigationWidget(),
-      theme: ThemeData(
-        primarySwatch: _white,
-      ),
-    );
+    return MultiProvider(
+        providers: providers,
+        child: MaterialApp(
+          title: 'RushB',
+          //navigatorKey: navigatorKey, // 配置全局对象
+          navigatorKey: NavigatorKey.navigatorKey, // 配置全局对象
+          //initialRoute: '/',
+          onGenerateRoute: Application.router.generator, //路由静态化
+          //导航的观察者
+          navigatorObservers: <NavigatorObserver>[NewObserver()],
+          //home: BottomNavigationWidget(),
+          theme: ThemeData(
+            primarySwatch: _white,
+          ),
+        ));
   }
 }

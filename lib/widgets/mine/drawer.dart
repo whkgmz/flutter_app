@@ -52,10 +52,14 @@ class MyDrawer extends StatelessWidget {
                   ),
                   GestureDetector(
                     child: ListTile(
-                      leading: const Icon(Icons.add),
+                      leading: const Icon(Icons.movie_filter),
                       title: const Text('运动视频'),
                     ),
-                    onTap: () => {NavigatorUtils.push(context, 'videoList')},
+                    onTap: () => {
+                      /// 关闭抽屉drawer
+                      Navigator.pop(context),
+                      NavigatorUtils.push(context, 'videoList')
+                    },
                   ),
                   ListTile(
                     leading: const Icon(Icons.settings),

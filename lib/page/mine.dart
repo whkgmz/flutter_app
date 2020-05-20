@@ -12,6 +12,12 @@ class MinePage extends StatefulWidget {
 
 class _MineState extends State<MinePage> {
   @override
+  void dispose() {
+    // 销毁生命周期
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     ScreenUtil.instance =
         ScreenUtil(width: 750, height: 1334, allowFontScaling: true)

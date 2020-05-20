@@ -50,10 +50,15 @@ Handler videoListPageHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   return VideoListPage();
 });
-// video播放页
+// video播放页2020-04-24
+//11:06	Frameworks Detected
+//			Android framework is detected.
+//			Configure
 Handler videoPlayPageHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-  return VideoPlayPage();
+  //获取路由跳转传来的参数
+  String url = params["url"]?.first;
+  return VideoPlayPage(url: url);
 });
 // // 路由传参
 // Handler routingReferenceHanderl = Handler(

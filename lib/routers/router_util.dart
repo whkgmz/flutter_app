@@ -51,7 +51,7 @@ class NavigatorUtils {
   static void goBack(BuildContext context) {
     /// 其实这边调用的是
     Navigator.pop(context);
-    Application.router.pop(context);
+    //Application.router.pop(context);
   }
 
   // 带参数的返回

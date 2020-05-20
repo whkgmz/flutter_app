@@ -176,6 +176,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.0.8"
+  fijkplayer:
+    dependency: "direct dev"
+    description:
+      path: "lib/plugins/fijkplayer"
+      relative: true
+    source: path
+    version: "0.7.0"
   fixnum:
     dependency: transitive
     description:
@@ -464,6 +471,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.2.1+2"
+  screen:
+    dependency: "direct main"
+    description:
+      name: screen
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.5"
   shared_preferences:
     dependency: "direct main"
     description:

@@ -21,6 +21,12 @@ class _RegisterPageState extends State<RegisterPage> {
       if (onValue.code == 0) {
         print('王洪魁');
         showAlertDialog(context);
+      } else {
+        Fluttertoast.showToast(
+            msg: "${onValue.message}",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIos: 1);
       }
     });
   }

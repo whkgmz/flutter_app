@@ -23,7 +23,7 @@ class DioUtils {
     //BaseOptions、Options、RequestOptions 都可以配置参数，优先级别依次递增，且可以根据优先级别覆盖参数 针对特别接口需要特殊设置的
     options = BaseOptions(
       //请求基地址,可以包含子路径
-      baseUrl: NetConstant.BASE_URL,
+      //baseUrl: NetConstant.BASE_URL,
       //连接服务器超时时间，单位是毫秒.
       connectTimeout: 10000,
       //响应流上前后两次接受到数据的间隔，单位为毫秒。
@@ -79,12 +79,6 @@ class DioUtils {
       return e; //continue
     }));
   }
-  // 获取token
-  // Future<dynamic> future = Future(() async {
-  //   SharedPreferences prefs = await SharedPreferences.getInstance();
-  //   print(prefs.getString("token"));
-  //   return prefs.getString("token");
-  // });
 
   /*
    * get请求

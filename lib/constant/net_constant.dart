@@ -2,7 +2,7 @@
 class NetConstant {
   static const String DOMAINS = "https://www.wanandroid.com";
 
-  static const String BASE_URL = "http://localhost:3000";
+  static const String BASE_URL = "http://angmc.online:3000";
 
   static const String BANNER_JSON = "/banner/json";
 
@@ -18,6 +18,8 @@ class NetConstant {
 
   static const String TYPE_ARTICLE = "/project/list/%s/json?cid=%s";
 
-  static const String LOGIN = "/api/login";
-  static const String REGISTER_PATH = "/api/register";
+  static const String LOGIN = "http://angmc.online:3000/api/login";
+  static const String REGISTER_PATH = "http://angmc.online:3000/api/register";
+  static const String VIDEO_LIST =
+      "https://apitest.rjfittime.com/hotcamp/sport/findSportGuideVideo.json";
 }

@@ -471,6 +471,13 @@
             </list>
           </value>
         </entry>
+        <entry key="screen">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/screen-0.0.5/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="shared_preferences">
           <value>
             <list>
@@ -748,6 +755,7 @@
       <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/pubspec_parse-0.1.5/lib" />
       <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/quiver-2.0.5/lib" />
       <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/reflectable-2.2.1+2/lib" />
+      <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/screen-0.0.5/lib" />
       <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-0.5.6+3/lib" />
       <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_macos-0.0.1+6/lib" />
       <root url="file://$PROJECT_DIR$/../flutterEnvironment/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_platform_interface-1.0.3/lib" />
