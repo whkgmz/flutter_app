@@ -27,6 +27,9 @@ samples, guidance on mobile development, and a full API reference.
 + 登录权限处理
 + webview 微信文章
 + 图片上传
++ tabbar切换页面
++ 视频播放常用功能
++ 首页轮播组件
 
 ## 使用到的三方库
 
