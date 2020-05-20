@@ -25,6 +25,8 @@ samples, guidance on mobile development, and a full API reference.
 + 验证码输入框
 + 整理路由封装
 + 登录权限处理
++ webview 微信文章
++ 图片上传
 
 ## 使用到的三方库
 
