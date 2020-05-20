@@ -24,6 +24,7 @@ samples, guidance on mobile development, and a full API reference.
 + 登录注册模块
 + 验证码输入框
 + 整理路由封装
++ 接口请求权限处理
 + 登录权限处理
 + webview 微信文章
 + 图片上传
