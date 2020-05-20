@@ -30,6 +30,7 @@ samples, guidance on mobile development, and a full API reference.
 + tabbar切换页面
 + 视频播放常用功能
 + 首页轮播组件
+后续待追加 ...
 
 ## 使用到的三方库
 
