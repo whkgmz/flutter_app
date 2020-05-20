@@ -17,6 +17,12 @@ samples, guidance on mobile development, and a full API reference.
 
 ## 使用到的三方库
 
+name | 价格 |  数量  
+-|-|-
+香蕉 | $1 | 5 |
+苹果 | $1 | 6 |
+草莓 | $1 | 7 |
+
 库	功能
 dio	网络库
 provider	状态管理
