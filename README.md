@@ -31,5 +31,9 @@ flutter_swiper | 轮播组件 |
 image_picker | 图片选择插件 |
 webview_flutter | WebView插件 |
 sticky_headers | 列表悬浮头 |
+shared_preferences | 本地存储
+screen | 屏幕亮度
+shimmer | 闪烁骨架屏交互
+json_serializable | json序列化
 
 详细内容可以参看pubspec.yaml文件
