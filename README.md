@@ -17,7 +17,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ## 实现内容
 + 使用provider (4.x 版本)做状态管理
-+ 基于dio （4.x 版本）的网络请求封装
++ 基于dio （3.x 版本）的网络请求封装
 + 使用Sliver 系列组件实现复杂滚动效果
 + 下拉刷新 + 上拉加载更多
 + 自定义Dialog
@@ -31,7 +31,7 @@ samples, guidance on mobile development, and a full API reference.
 + tabbar切换页面
 + 视频播放常用功能
 + 首页轮播组件
-后续待追加 ...
++ 后续待追加 ...
 
 ## 使用到的三方库
 
